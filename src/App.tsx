@@ -1,4 +1,4 @@
-import { BrowserRouter ,Routes,Route} from "react-router-dom"
+import { Routes,Route} from "react-router-dom"
 import { PokemonPage } from "./Features/Pokemon/PokemonPage"
 import { PokemonDetailsPage } from "./Features/Pokemon/PokemonDetailsPage"
 const App = () => {
