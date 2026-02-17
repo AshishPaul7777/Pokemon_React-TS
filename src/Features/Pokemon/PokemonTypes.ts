@@ -19,6 +19,10 @@ export interface PokemonType {
       dream_world: {
         front_default: string | null
       }
+      "official-artwork"?: {
+        front_default: string | null
+      }
+
     }
   }
   
