@@ -52,7 +52,7 @@ export const PokemonPage = () => {
         <SearchBar value={search} onChange={setSearch} />
       </div>
 
-      {/* Pokémon Grid */}
+     
       <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
         {isLoading
           ? Array.from({ length: 12 }).map((_, i) => (
@@ -69,8 +69,8 @@ export const PokemonPage = () => {
               </li>
             ))}
       </ul>
-
-      {/* Sentinel */}
+{/* 
+    // Sentinel for infinite scrolling */}
       <div ref={loadMoreRef} className="h-10" />
 
       {/* Loading next page */}

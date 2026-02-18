@@ -7,7 +7,7 @@ export const PokemonDetailsPage = () => {
 
   const { data, isLoading, error } = usePokemonDetails(id!)
 
-  /* -------------------- Loading State -------------------- */
+ // Loading State
   if (isLoading) {
     return (
       <main className="min-h-screen bg-muted/30 py-10">
@@ -25,7 +25,7 @@ export const PokemonDetailsPage = () => {
     )
   }
 
-  /* -------------------- Error State -------------------- */
+// Error State
   if (error || !data) {
     return (
       <main className="min-h-screen flex items-center justify-center">
@@ -44,16 +44,16 @@ export const PokemonDetailsPage = () => {
     )
   }
 
-  /* -------------------- Image Selection -------------------- */
+ // Selecting the image
   const imageUrl =
     data.sprites.other?.["official-artwork"]?.front_default ??
     data.sprites.other?.dream_world?.front_default
 
-  /* -------------------- UI -------------------- */
+  // My UI
   return (
     <main className="min-h-screen bg-muted/30 py-10">
       <div className="max-w-4xl mx-auto px-4">
-        {/* Back */}
+      
         <Link
           to="/"
           className="inline-block mb-6 text-sm text-muted-foreground hover:underline"
@@ -61,11 +61,11 @@ export const PokemonDetailsPage = () => {
           ← Back to Pokédex
         </Link>
 
-        {/* Card */}
+       
         <div className="bg-background rounded-2xl shadow-lg p-6 md:p-10">
-          {/* Header */}
+         
           <div className="flex flex-col md:flex-row items-center gap-8">
-            {/* Image */}
+          
             {imageUrl && (
               <div className="w-48 h-48 flex items-center justify-center rounded-full bg-muted">
                 <img
@@ -76,13 +76,12 @@ export const PokemonDetailsPage = () => {
               </div>
             )}
 
-            {/* Info */}
+           
             <div className="text-center md:text-left space-y-3">
               <h1 className="text-4xl font-bold capitalize">
                 {data.name}
               </h1>
 
-              {/* Types */}
               <div className="flex flex-wrap justify-center md:justify-start gap-2">
                 {data.types.map(t => (
                   <span
@@ -94,7 +93,7 @@ export const PokemonDetailsPage = () => {
                 ))}
               </div>
 
-              {/* Meta */}
+            
               <div className="flex justify-center md:justify-start gap-6 text-sm text-muted-foreground">
                 <span>Height: {data.height}</span>
                 <span>Weight: {data.weight}</span>
@@ -103,10 +102,10 @@ export const PokemonDetailsPage = () => {
             </div>
           </div>
 
-          {/* Divider */}
+    
           <div className="my-8 h-px bg-border" />
 
-          {/* Stats */}
+        
           <div>
             <h2 className="text-xl font-semibold mb-4">
               Base Stats

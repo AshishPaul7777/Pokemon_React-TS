@@ -3,9 +3,7 @@ import type { Pokemon } from "../Features/Pokemon/PokemonTypes"
 
 const BASE_URL = "https://pokeapi.co/api/v2/pokemon"
 
-/**
- * 🔹 Fetch paginated Pokémon (for infinite scroll list)
- */
+// Fetch the pages for Infinite scroll
 export const fetchPokemonPage = async (
   offset: number,
   limit = 20
@@ -29,10 +27,8 @@ export const fetchPokemonPage = async (
   return Promise.all(detailedRequests)
 }
 
-/**
- * 🔹 Fetch Pokémon DETAILS (by name or id)
- * Used for the Pokémon Details Page
- */
+//Fetch Pokemon Details by name or id
+ 
 export const fetchPokemonDetails = async (
   identifier: string | number
 ): Promise<Pokemon> => {
